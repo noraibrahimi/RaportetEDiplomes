@@ -1,0 +1,40 @@
+Clustering
+
+1. Shkarkimi i data setit (Titulli) 
+* Me shkru pak per Kaggle - se o data source i madh
+* Linkun ku e kena marr data setin - https://www.kaggle.com/aussie84/heroes-clustering-using-k-means/data
+* Pse e kena perzgjedh ket data set - megjithese nuk kena pas shume mundesi ne Kaggle se ska shume data sete, prap kena vendos qeta se nuk ka pas 
+kolona t'kqija, u kan mire i strukturum edhe ka pas atribute qe prej lojes, e dijme qe jane t'mira.
+
+2. Para procesimi 
+* Pse duhet me para procesu - se ne dojna me i kllasteru herojt, qata na vyn me e ndreq data setin se aktualisht i ka 500.00 rreshta edhe 70 kolona.
+* Qysh e kena para procesu - i kena grupu sipas hero_id edhe ja kena gjet MEAN (mesataren) secilit atribut, pasi mesatarja osht vlera ma pershkruese per atribut data seti numerik
+* Rezultati i para procesimit - formohet ni data set tjeter me 110 kolona edhe rreth 13 rreshta, ku hero_id osht unike per secilin rresht te data setit, me kto t'dhana, mujna me e trajnu modelin
+
+3. Algoritmi i kllasterimit 
+* Cilin algoritem e kena perdor edhe pse - K Means me verzionin Bisecting, kallzon qka o pak KMeans.
+* Pse Bisecting - se osht ma i ri, edhe parimin e punes e ka ma t'mire (menoj) se KMeans, se KMeans i zgjedh pikat rastesisht e Bisecting nis me parimin me nda pergjys prej fillimi. [Lexo hala per kto se une nuk i di qaq mireeee]
+* Neper cilat hapa e kena shti algoritmin e trajnum?
+- E kena bucketize kolonen 'kills' ne kolonen 'kills_out' (me ja zvogelu hapesiren e numrave, rezultati koxha i njejte dele dhe pa e ba qet hap, vec e kena bo qe me pas si demonstrim qysh perdoret)
+- Imputer: i mbush vlerat e zbrazeta, ne rastin tone me 'median', median osht forma qysh e mbush, forma tjeter o mean.
+-> Mean vs Median - mean o vlera mesatare masi i rradhitim ascending, median o shuma e krejteve / numri i elementeve.
+- Vector Assembeler - e krijon ni vektor me krejt elementet mrena.
+- Standard scaler - i bon scale vlerat qe mos me dominu ni vlere e sena, i din kto af.
+- BisectingKmeans - algoritmi qe kena perdor, K osht numri i kllasterave, setMaxIter o sa here me u perserit iterimi qe me e zgjedh rezultatin ma t'mire.
+
+4. Ruajtja e modelit te trajnuar
+* Cka osht modeli i trajnum? - osht algoritmi qe ruhet lokalisht apo hostohet dikun ne menyre qe me u riperdor.
+* Pse modeli i trajnum? - per arsye se nuk kena hesap me e trajnu modelin cdoher kur dojna me bo kllastering realtime, qata e rujna dikun edhe e ngarkojm edhe e riperdorim.
+* Qysh e kena rujt ne edhe ku? - me spark e kena bo me u rujt, e kena rujt ne google cloud si docker imazh.
+
+5. Hostimi ne cloud - pjesa 1: Komandat
+
+6. Hostimi ne cloud - pjesa 2: Cloud platform
+
+7. REST API
+
+8. Nje kerkese e thjeshte dhe paraqitja ne Front
+
+9. Pamja e pare e kllasterimit
+
+10. Rezultatet e fituara nga grafet
